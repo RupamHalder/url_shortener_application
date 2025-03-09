@@ -25,29 +25,40 @@ Ensure you have the following installed:
 ### Steps to Set Up the Project
 
 1. **Clone the Repository**
-   ```sh
+   ```bash
    git clone https://github.com/RupamHalder/url_shortener_application.git
    cd url_shortener_application
    ```
 
 2. **Create a Virtual Environment (Optional but Recommended)**
-   ```sh
+   ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 
 3. **Install Dependencies**
-   ```sh
+   ```bash
    pip install -r requirements.txt
    ```
 
+3. **Add Configuration Files**
+* create .env file in main project directory and add your database credentials as follows.
+
+   ```bash
+    DB_NAME="<Database name>"
+    DB_USER="<Database username>"
+    DB_PASSWORD="<Database password>"
+    DB_HOST="<Database host name>"
+    DB_PORT="<Database port>"
+   ```
+
 4. **Apply Migrations**
-   ```sh
+   ```bash
    python manage.py migrate
    ```
 
 5. **Run the Development Server**
-   ```sh
+   ```bash
    python manage.py runserver
    ```
    The application will be available at `http://127.0.0.1:8000/`.

@@ -8,23 +8,6 @@ from app_url_shortener.forms import UrlModelForm
 from app_url_shortener.models import Url
 
 
-# Create your views here.
-# class ShortenUrlView(View):
-#     def get(self, request):
-#         shorten_url_form = UrlModelForm()
-#         return render(request, 'url/shorten-url.html',
-#                       {'form': shorten_url_form})
-#
-#     def post(self, request):
-#         shorten_url_form = UrlModelForm(request.POST)
-#         if not shorten_url_form.is_valid():
-#             return render(request, 'url/shorten-url.html',
-#                           {'form': shorten_url_form})
-#         else:
-#             shorten_url_form.save()
-#             return redirect('/url_shortener/list/')
-
-
 class ShortenUrlCreateView(generic.CreateView):
     template_name = 'url/shorten-url.html'
     form_class = UrlModelForm
@@ -52,6 +35,7 @@ class ShortenUrlListView(generic.ListView):
     model = Url
     template_name = "url/shorten-url-list.html"
     context_object_name = "shorten_url_list" # by default it takes "object_list"
+    paginate_by = 5
 
     def get_queryset(self):
         return Url.objects.order_by("-created_at")
