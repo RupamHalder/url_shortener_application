@@ -35,7 +35,7 @@ class ShortenUrlListView(generic.ListView):
     model = Url
     template_name = "url/shorten-url-list.html"
     context_object_name = "shorten_url_list" # by default it takes "object_list"
-    paginate_by = 5
+    paginate_by = 10
 
     def get_queryset(self):
         return Url.objects.order_by("-created_at")

@@ -41,8 +41,8 @@ Ensure you have the following installed:
    pip install -r requirements.txt
    ```
 
-3. **Add Configuration Files**
-* create .env file in main project directory and add your database credentials as follows.
+4. **Add Configuration Files**
+* Create .env file in main project directory and add your database credentials as follows.
 
    ```bash
     DB_NAME="<Database name>"
@@ -52,12 +52,12 @@ Ensure you have the following installed:
     DB_PORT="<Database port>"
    ```
 
-4. **Apply Migrations**
+5. **Apply Migrations**
    ```bash
    python manage.py migrate
    ```
 
-5. **Run the Development Server**
+6. **Run the Development Server**
    ```bash
    python manage.py runserver
    ```
